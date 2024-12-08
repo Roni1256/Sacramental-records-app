@@ -1,7 +1,7 @@
 appId: com.example.vitereactelectron
-productName: ViteReactElectronApp
+productName: Sacramental-Records
 directories:
-  output: dist_electron  # Output directory for the build artifacts
+  output: dist  # Output directory for the build artifacts
 files:
   - dist/**/*            # Include the Vite build output
   - src/**/*             # Include the Electron source files
@@ -24,11 +24,7 @@ linux:
     - AppImage           # AppImage format for Linux
   icon: build/icon.png    # Linux icon (should be .png format)
 
-publish:
-  provider: github         # If you're using GitHub for releases
-  owner: <your-github-username>
-  repo: <your-repository-name>
-  vPrefixed: true
+
 
 # Optional: Specify any extra configuration or customization needed for the build process.
 extraMetadata:
