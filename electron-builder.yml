@@ -1,0 +1,35 @@
+appId: com.example.vitereactelectron
+productName: ViteReactElectronApp
+directories:
+  output: dist_electron  # Output directory for the build artifacts
+files:
+  - dist/**/*            # Include the Vite build output
+  - src/**/*             # Include the Electron source files
+  - package.json         # Include the package.json
+  - build/**/*           # Include the build folder with icons, etc.
+asar: true               # Bundle the application files into an ASAR archive (optional)
+
+win:
+  target:
+    - nsis               # Installer format for Windows (NSIS)
+  icon: build/icon.ico    # Windows icon (should be at least 256x256)
+
+mac:
+  target:
+    - dmg                # Disk image format for MacOS
+  icon: build/icon.icns   # MacOS icon (should be .icns format)
+
+linux:
+  target:
+    - AppImage           # AppImage format for Linux
+  icon: build/icon.png    # Linux icon (should be .png format)
+
+publish:
+  provider: github         # If you're using GitHub for releases
+  owner: <your-github-username>
+  repo: <your-repository-name>
+  vPrefixed: true
+
+# Optional: Specify any extra configuration or customization needed for the build process.
+extraMetadata:
+  main: dist/main.js  # Main entry point for Electron
